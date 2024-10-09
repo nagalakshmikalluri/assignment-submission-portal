@@ -7,7 +7,7 @@ router.post('/register', async (req, res) => {
     try {
         const existingUser = await User.findOne({ username, role: 'user' });
         if (existingUser) {
-            return res.status(400).json({ message: 'User already exists' });
+            return res.status(400).json({ message: 'User Already Exists' });
         }
 
         const newUser = new User({ username, password });
